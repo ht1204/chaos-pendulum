@@ -1,5 +1,5 @@
 /**
- * Phase 4 — Lagrangian double-pendulum equations + RK4 integrator.
+ * Lagrangian double-pendulum equations + RK4 integrator.
  * Verbatim, op-for-op port of index.html:549–603 so trajectories are
  * float-identical to the original (verified by differential tests).
  */

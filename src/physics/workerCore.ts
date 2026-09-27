@@ -1,5 +1,5 @@
 /**
- * Phase 4 — worker-side simulation world.
+ * Worker-side simulation world.
  * Pure, DOM-free module so the stepping logic is unit-testable without a
  * real Worker. worker.ts is a thin message-dispatch shell around this.
  */

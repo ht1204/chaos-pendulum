@@ -9,12 +9,6 @@ import { Sidebar } from "./Sidebar";
 import { MoonIcon, SunIcon } from "./icons";
 import { DEFAULT_PHYSICS_PARAMS } from "@/physics/types";
 
-/**
- * Phase 7 — dashboard composition.
- * Layout port of .app grid (index.html:55–61): 48px header row, then
- * canvas + 300px sidebar; stacks vertically under 640px
- * (index.html:327–339).
- */
 const AppShell = styled.div`
   display: grid;
   grid-template-columns: 1fr 300px;

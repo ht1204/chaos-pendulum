@@ -114,6 +114,21 @@ bit-exact differential tests.
 | Ghost pendulums | Launch 6 near-identical pendulums to show chaos |
 | Theme | System-aware dark/light with persisted override |
 
+## CI/CD
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push to `main`
+and every pull request:
+
+1. **verify** — `typecheck` → `lint` → unit/component/a11y tests → build
+2. **e2e** — Playwright suite against the production build (Chromium;
+   WebGL via SwiftShader; report uploaded as an artifact on failure)
+3. **pages** — after verify + e2e pass on `main`: static export
+   (`EXPORT=1`, `basePath: /chaos-pendulum`) → `.nojekyll` → deploy to
+   GitHub Pages
+
+One-time setup: repo **Settings → Pages → Source: GitHub Actions**.
+If the repository is renamed, update `BASE_PATH` in the workflow.
+
 ## License
 
 MIT

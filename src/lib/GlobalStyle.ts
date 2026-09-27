@@ -3,7 +3,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
 /**
- * Phase 2 — global design tokens as CSS custom properties.
+ * Global design tokens as CSS custom properties.
  * Selector strategy is a verbatim port of index.html:5–41:
  *   - :root defaults are dark
  *   - system-preference light applies only when no explicit [data-theme="dark"]

@@ -1,12 +1,12 @@
 /**
- * Phase 6 — Three.js 3D renderer (net-new feature, in scope per AGENTS.v2.md).
+ * Three.js 3D renderer.
  *
  * Loaded exclusively through dynamic import() so Three.js stays out of the
  * initial bundle. Physics coordinates (y-down canvas space) are mapped to
  * Three.js space with y flipped so the pendulum hangs downward on screen.
  *
- * dispose() implements the full WebGL teardown checklist (resolved findings
- * #4/#5): geometries, materials, controls.dispose(), renderer.dispose() and
+ * dispose() implements the full WebGL teardown checklist: geometries,
+ * materials, controls.dispose(), renderer.dispose() and
  * renderer.forceContextLoss().
  */
 import { STRIDE } from "@/physics/types";
@@ -217,7 +217,7 @@ export class ThreeRenderer implements IRenderer {
     for (const light of this.lights) light.dispose();
 
     this.renderer.dispose();
-    // Resolved finding #5: release the WebGL context itself so repeated
+    // Release the WebGL context itself so repeated
     // 2D↔3D swaps never leak contexts.
     this.renderer.forceContextLoss();
   }

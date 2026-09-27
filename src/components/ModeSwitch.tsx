@@ -4,11 +4,6 @@ import React, { useId } from "react";
 import styled from "styled-components";
 import type { RendererMode } from "./CanvasStage";
 
-/**
- * Phase 7 — 2D↔3D switcher as a segmented radio group (accessible,
- * keyboard-operable). Swapping calls dispose() on the outgoing renderer
- * via CanvasStage's mode effect.
- */
 const Group = styled.div`
   display: flex;
   gap: 4px;

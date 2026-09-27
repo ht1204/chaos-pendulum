@@ -4,7 +4,6 @@
  * physics, copied verbatim (index.html:505–603). Independent of src/physics
  * so a porting error in either place cannot hide.
  *
- * Output is pasted into src/physics/golden.test.ts.
  */
 const params = {
   g: 0.1,

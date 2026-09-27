@@ -1,7 +1,6 @@
 /**
- * Phase 4 — physics types and worker protocol.
+ * Physics types and worker protocol.
  * Fixed timestep dt = 0.15 is INTENTIONAL behavior parity with the original
- * (index.html:574) — do not change it silently.
  */
 
 export interface PhysicsParams {
@@ -50,8 +49,7 @@ export interface FramesMessage {
   type: "frames";
   /**
    * Transferable batch: steps × pendulums × STRIDE floats.
-   * EVERY step is included so trails never miss points
-   * (AGENTS.v2.md resolved finding #1).
+   * EVERY step is included so trails never miss points.
    */
   buffer: Float32Array;
   pendulums: number;

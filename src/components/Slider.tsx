@@ -4,7 +4,7 @@ import React, { useId } from "react";
 import styled from "styled-components";
 
 /**
- * Phase 3 — Slider. Style port of .param / .param-header / input[type=range]
+ * Slider — style port of .param / .param-header / input[type=range]
  * (index.html:181–240). Native <input type="range"> with a visible <label>;
  * the thumb carries a persistent ring that doubles as the focus indicator.
  */

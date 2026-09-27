@@ -3,7 +3,6 @@
 import React from "react";
 import styled from "styled-components";
 
-/** Phase 7 — live state readout, port of .readout (index.html:262–287). */
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;

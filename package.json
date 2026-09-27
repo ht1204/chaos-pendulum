@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "description": "Interactive double pendulum simulation — Next.js 15 reengineering (plan: agents/AGENTS.v2.md)",
+  "engines": {
+    "node": ">=20.18"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

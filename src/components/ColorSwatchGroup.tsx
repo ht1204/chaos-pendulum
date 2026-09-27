@@ -4,13 +4,7 @@ import React, { useId } from "react";
 import styled, { css } from "styled-components";
 import { TRAIL_COLORS } from "@/lib/theme";
 
-/**
- * Phase 3 — ColorSwatchGroup.
- * The original swatches (index.html:457–465) are non-focusable <div>s —
- * a keyboard-accessibility bug. This is a native radio group instead:
- * visually-hidden radios + styled labels, so Tab / arrow keys / space work
- * and checked/focus states are pure CSS (index.html:242–260 port).
- */
+
 const Field = styled.fieldset`
   border: none;
   margin: 4px 0 0;

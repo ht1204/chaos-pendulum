@@ -1,8 +1,8 @@
 /**
- * Phase 4 — physics worker entry.
+ * Physics worker entry.
  * Instantiated from usePhysics via:
  *   new Worker(new URL("../physics/worker.ts", import.meta.url))
- * Keeps RK4 integration off the main thread (AGENTS.v2.md architecture).
+ * Keeps RK4 integration off the main thread.
  */
 import {
   applyParams,

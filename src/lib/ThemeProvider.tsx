@@ -12,7 +12,7 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { darkTokens, lightTokens, type ThemeMode, type ThemeTokens } from "./theme";
 
 /**
- * Phase 2 — theme switching mechanism (absent in v1 plan).
+ * Theme switching mechanism.
  * - No explicit choice → follow prefers-color-scheme (like the original).
  * - Explicit choice → [data-theme] on <html> + localStorage persistence.
  * - An inline script in the root layout applies the stored theme before

@@ -1,13 +1,13 @@
 /**
- * Phase 5 — Canvas 2D renderer.
+ * Canvas 2D renderer.
  * Faithful port of drawPendulum/render (index.html:626–717): background
  * fill per theme, center crosshair, fading trails, ghost minimal rods,
  * main rods/pivot/bobs with mass-proportional radii.
  *
- * Performance notes (AGENTS.v2.md Phase 5 acceptance):
+ * Performance notes:
  *  - trails live in TrailBuffer (Float32Array ring) — no per-step allocations
  *  - rgba() strings are memoized per (color, quantized alpha) — bounded cache
- *  - ALL batched steps are consumed per message (resolved finding #1)
+ *  - ALL batched steps are consumed per message
  */
 import { STRIDE } from "@/physics/types";
 import type { IRenderer, RendererOptions } from "./IRenderer";
@@ -118,7 +118,7 @@ export class Canvas2DRenderer implements IRenderer {
       );
     }
 
-    // Consume EVERY step of the batch (resolved finding #1) — this is what
+    // Consume EVERY step of the batch — this is what
     // keeps trails complete when speed > 1.
     for (let s = 0; s < steps; s++) {
       for (let p = 0; p < pendulumCount; p++) {

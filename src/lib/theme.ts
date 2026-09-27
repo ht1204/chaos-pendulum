@@ -1,9 +1,4 @@
-/**
- * Design tokens — Phase 2.
- * Verbatim port of the 17 CSS custom properties from index.html:5–41.
- * Dark values are the :root defaults; light values mirror both the
- * prefers-color-scheme block and [data-theme="light"] block of the original.
- */
+
 export type ThemeMode = "dark" | "light";
 
 export interface ThemeTokens {

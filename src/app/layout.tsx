@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Applies the persisted theme before first paint (Phase 2 — no theme flash).
+ * Applies the persisted theme before first paint (avoids a theme flash).
  * Mirrors the persistence key used by ThemeProvider.
  */
 const themeInitScript = `(function(){try{var t=localStorage.getItem("cp-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}}catch(e){}})();`;

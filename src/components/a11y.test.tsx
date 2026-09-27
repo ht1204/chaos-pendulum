@@ -8,10 +8,7 @@ import { ColorSwatchGroup } from "./ColorSwatchGroup";
 import { ModeSwitch } from "./ModeSwitch";
 import { Sidebar } from "./Sidebar";
 
-/**
- * Phase 3/8 acceptance: WCAG 2.1 AA — jest-axe reports zero violations on
- * the control surface (the original's <div> swatches failed this).
- */
+
 describe("accessibility (jest-axe)", () => {
   it("Slider has no violations", async () => {
     const { container } = render(

@@ -3,10 +3,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-/**
- * Phase 3 — Button. Style port of .btn / .btn.primary (index.html:154–178)
- * with an added :focus-visible ring (WCAG 2.4.7).
- */
+
 const StyledButton = styled.button<{ $primary?: boolean }>`
   flex: 1;
   padding: 8px 4px;

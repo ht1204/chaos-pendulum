@@ -1,9 +1,5 @@
 #!/usr/bin/env node
-/**
- * AGENTS.v2.md — architecture decision guard:
- * every module under src/ that imports styled-components must be a client
- * component ("use client" directive in its first line). Resolved v1 finding #3.
- */
+
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 

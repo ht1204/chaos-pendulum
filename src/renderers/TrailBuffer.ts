@@ -1,5 +1,5 @@
 /**
- * Phase 5 — circular trail buffer backed by a Float32Array.
+ * Circular trail buffer backed by a Float32Array.
  * Replaces the original's `trail.push(...)` + `trail.shift()` pair
  * (index.html:601–602), which allocates and shifts an O(n) array on every
  * physics step. Fixed-size ring: zero allocations after warmup.

@@ -1,8 +1,8 @@
 import { expect, test, type Page } from "@playwright/test";
 
 /**
- * Phase 8 — E2E. The only layer where Canvas / WebGL / Web Worker run for
- * real (AGENTS.v2.md). Run: npm run build && npm run test:e2e
+ * E2E — the only layer where Canvas / WebGL / Web Worker run for real.
+ * Run: npm run build && npm run test:e2e
  */
 
 async function collectPageErrors(page: Page): Promise<string[]> {

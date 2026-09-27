@@ -11,7 +11,7 @@ import { LiveReadout, type ReadoutState } from "./LiveReadout";
 import { PauseIcon, PlayIcon, ResetIcon } from "./icons";
 import type { RendererMode } from "./CanvasStage";
 
-/** Phase 7 — sidebar chrome, port of .sidebar/.section/.section-label (index.html:123–146). */
+/** Sidebar chrome — port of .sidebar/.section/.section-label (index.html:123–146). */
 const Aside = styled.aside`
   background: var(--surface);
   border-left: 1px solid var(--border);

@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 /**
- * Phase 3 — Toggle. Style port of .toggle-row / .toggle (index.html:289–324)
+ * Toggle — style port of .toggle-row / .toggle (index.html:289–324)
  * using a real checkbox (implicit role: switch semantics via aria).
  * The track receives the focus ring via input:focus-visible + sibling selector.
  */

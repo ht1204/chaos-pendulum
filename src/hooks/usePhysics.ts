@@ -36,7 +36,7 @@ export interface UsePhysicsResult {
 }
 
 /**
- * Phase 7 — worker orchestration hook.
+ * Worker orchestration hook.
  * The rAF loop lives in CanvasStage (display cadence, pauses when the tab
  * is hidden — parity with the original's requestAnimationFrame loop).
  * FPS counts received frame batches; readout throttling mirrors

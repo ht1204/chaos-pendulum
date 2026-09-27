@@ -48,17 +48,7 @@ interface CanvasStageProps {
   options: RendererOptions;
 }
 
-/**
- * Phase 7 — owns the renderer lifecycle.
- *
- * - One <canvas key={mode}> per renderer mode (a canvas that has hosted a
- *   WebGL context can never return a 2D context, so elements are swapped).
- * - 3D is created through the async factory; a cancelled mount disposes the
- *   half-built renderer immediately.
- * - The rAF loop sends one `tick` per frame; the worker replies with a
- *   batched `frames` message that is forwarded to the active renderer.
- * - Unmount always calls renderer.dispose() — the zero-leak swap guarantee.
- */
+
 export function CanvasStage({ physics, mode, options }: CanvasStageProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
