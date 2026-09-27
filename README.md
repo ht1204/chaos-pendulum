@@ -2,10 +2,10 @@
 
 An interactive double pendulum simulation with a real-time physics dashboard.
 
-Reengineered as a production-grade **Next.js 15 + TypeScript** application per
-the plan in [`agents/AGENTS.v2.md`](agents/AGENTS.v2.md). The original
-self-contained `index.html` is preserved in the repo root as the golden
-differential-testing oracle.
+Reengineered as a production-grade **Next.js 15 + TypeScript** application
+
+[Live Page](https://ht1204.github.io/chaos-pendulum/). 
+
 
 ## Getting Started
 
