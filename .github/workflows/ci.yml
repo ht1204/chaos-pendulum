@@ -5,11 +5,6 @@ on:
     branches: [main]
   pull_request:
 
-# Never let two Pages deploys race; queue instead of cancelling mid-deploy.
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   verify:
     name: Typecheck · Lint · Unit · Build
@@ -18,10 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node 20
+      - name: Setup Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -46,10 +41,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node 20
+      - name: Setup Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -58,9 +53,10 @@ jobs:
       - name: Install Chromium (SwiftShader WebGL)
         run: npx playwright install --with-deps chromium
 
-      # pretest:e2e builds first; playwright.config.ts starts/stops `next start`.
+      # npm run triggers the pretest:e2e build hook (npx would skip it);
+      # playwright.config.ts then starts/stops `next start` against that build.
       - name: Run E2E suite
-        run: npx playwright test
+        run: npm run test:e2e
 
       - name: Upload Playwright report on failure
         if: failure()
@@ -75,6 +71,9 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: [verify, e2e]
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages-deploy-${{ github.ref }}
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
@@ -85,10 +84,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node 20
+      - name: Setup Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -100,7 +99,7 @@ jobs:
           EXPORT: "1"
           BASE_PATH: /chaos-pendulum
 
-      # _next/ starts with an underscore — Jekyll would strip it without this.
+    
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
 
